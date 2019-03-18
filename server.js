@@ -1,4 +1,5 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 require('dotenv').config();
 
 // Set the port of our application
@@ -12,6 +13,12 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// ================================================================================
+// Express Handlebars Template config
+// ================================================================================
+app.engine("handlebars", exphbs({defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+app.use(express.static('public'));   //tell express that the "public" folder is where all the static page info is located
 
 // ================================================================================
 // ROUTER

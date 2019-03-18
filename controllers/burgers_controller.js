@@ -4,20 +4,27 @@ const express = require('express');
 const router = express.Router();    
 
 // Import the burger models which is an object with methods referring to the ORM SQL methods
-var burger = require('../models/burgers');    
+var burger = require('../models/burger');    
 
 
 // ================================================================================
 // ROUTES
 // ================================================================================
-router.get("/",function(req, res){
+router.get("/", function(req, res){
     burger.all(function(data){
-        res.json(data);
+        var hbsObject = {
+            burgers: data
+        };
+        console.log(hbsObject);
+        res.render("index", hbsObject);
     });
-
 });
 
-
+router.post("/api/burgers", function(req, res){
+    burger.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured] ,function(result){
+        res.json({ id: result.insertId });
+    });
+});
 
 
 

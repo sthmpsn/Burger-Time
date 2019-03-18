@@ -1,0 +1,42 @@
+<header class="container container-fluid">
+    <div id="row-header" class="row">
+        <div class="col jumbotron h1 text-center bg-warning p-4 my-0">
+            <p>It's Burger Time!</p>
+        </div>
+    </div>
+</header>
+<main class="container">
+    <div id="tomato" class="row bg-danger mx-3 text-white">
+        <div id="tomato-add" class="col-6 text-center my-auto">
+            <button type="button" class="btn btn-lg btn-danger border mx-5 my-2 px-4">
+                <h2><i class="fas fa-hamburger"></i></h2>
+                <h5>Add</h5>
+            </button>
+            Text-box here
+        </div>
+        <div class="col-6 d-flex align-items-center justify-content-center">
+            <img id="bb-stitch" class="img-fluid" src="/assets/images/bb-stitch.png" alt="Bob burger fam">
+        </div>
+    </div>
+
+    <div id="meat" class="row mx-3">
+        <div id="burgers-avail" class="col-6 border py-4">
+            <h2 class="text-center">Available</h2>
+            {{#each burgers}}
+                <div id={{ this.id}} class="col-12 h3"> {{ this.burger_name }} </div>
+            {{/each}}
+        </div>
+        <div id="burgers-devoured" class="col-6 py-4">
+            <h2 class="text-center">Devoured</h2>
+
+        </div>
+    </div>
+</main>
+<footer class="container container-fluid">
+        <div id="row-header" class="row">
+        <div class="col jumbotron h1 text-center bg-warning p-4 my-0">
+            <p>FOOTER</p>
+        </div>
+    </div>
+</footer>
+</div>
