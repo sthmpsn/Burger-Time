@@ -2,3 +2,21 @@
     width: 75%;
     height: 75%;
 }
+
+.burger-bun-top {
+    background-color: #F0CC9A;
+    background-image: linear-gradient(#de8b3b,#f3cca1);
+}
+
+.burger-bun-bot {
+    background-color: #F0CC9A;
+    background-image: linear-gradient(#f3cca1,#de8b3b);
+}
+
+#meat {
+    background-color: #A06753;
+}
+
+#burgers-avail {
+    border-right: 5px solid #FFAD07;
+}
