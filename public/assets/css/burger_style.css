@@ -1,6 +1,6 @@
 #bb-stitch {
-    width: 75%;
-    height: 75%;
+    width: 30%;
+    height: 70%;
 }
 
 #oval {
@@ -23,7 +23,7 @@
     background-image: linear-gradient(#f3cca1,#de8b3b);
 }
 
-#meat {
+.meat {
     background-color: #A06753;
 }
 
