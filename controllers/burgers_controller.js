@@ -11,9 +11,25 @@ var burger = require('../models/burger');
 // ROUTES
 // ================================================================================
 router.get("/", function(req, res){
+    var burgersAvail = [];
+    var burgersEaten = [];
+    
     burger.all(function(data){
+    
+    data.forEach(burger => {
+        if(burger.devoured == 1){
+            burgersEaten.push(burger);
+            console.log("Devoured: " +burger.burger_name);
+        }
+        else{
+            burgersAvail.push(burger);
+            console.log("Available: " +burger.burger_name);
+        }
+    });
+
         var hbsObject = {
-            burgers: data
+            burgersAvail: burgersAvail,
+            burgersEaten: burgersEaten
         };
         console.log(hbsObject);
         res.render("index", hbsObject);
