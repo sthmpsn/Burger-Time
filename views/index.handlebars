@@ -27,13 +27,16 @@
         </div>
     </div>
 
-        
-        {{#each burgersAvail}}
-        <div id=(concat 'patty-' {{ this.id }}) class="row mx-3 meat border border-dark rounded text-white">
-            <div id={{ this.id}} class="col-12 h3"> {{ this.burger_name }} </div>
-        </div>
-        {{/each}}
+        <div class="row mx-3 meat border border-dark rounded text-white text-center">
+            {{#each burgersAvail}}
+                <div id="patty-{{ this.id}}" class="col-6 h3 my-0"> {{ this.burger_name }} </div>
+            {{/each}}
+            {{#each burgersEaten}}
 
+                <div id="patty-{{ this.id}}" class="col-6 h3 my-0"> {{ this.burger_name }} </div>
+            </div>
+            {{/each}}
+        </div>
 
 
 </main>
