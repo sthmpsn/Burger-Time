@@ -9,7 +9,6 @@
     position: relative;
     top: 60px;
     background-color: #de8b3b;
-    /* background-image: linear-gradient(#de8b3b,#f3cca1); */
     border-radius: 100px / 50px;
 }
 
@@ -30,3 +29,5 @@
 #burgers-avail {
     border-right: 5px solid #FFAD07;
 }
+
+

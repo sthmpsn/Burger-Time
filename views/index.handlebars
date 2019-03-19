@@ -1,51 +1,60 @@
-<header class="container container-fluid">
-    <div id="row-header" class="row">
-        <div id="oval" class="p-4 my-0"></div>
-        <div class="col jumbotron h1 text-center burger-bun-top p-4 my-0">
-            <p>It's Burger Time!</p>
-        </div>
-    </div>
-</header>
-<main class="container">
-    <div id="tomato" class="row bg-danger mx-3 text-white rounded align-items-center d-flex d-inline-block">
-        <div id="tomato-add" class="col-4 my-auto text-right">
-            <button type="button" class="btn btn-sm btn-danger border mx-2 my-2 px-4">
-                <h2><i class="fas fa-hamburger"></i></h2>
-                <h5>Add</h5>
-            </button>
-        </div>
-        <div class="col-4">
-            <input type="text" class="form-control" id="txtBoxBurger" placeholder="Enter Burger Name Here">
-        </div>
-    </div>
-    <div id="meat-heading" class="row bg-warning rounded mx-1">
-        <div id="burgers-avail" class="col-6">
-            <h2 class="text-center">Available</h2>
-        </div>
-        <div id="burgers-devoured" class="col-6">
-            <h2 class="text-center">Devoured</h2>
-        </div>
-    </div>
-
-        <div class="row mx-3 meat border border-dark rounded text-white text-center">
-            {{#each burgersAvail}}
-                <div id="patty-{{ this.id}}" class="col-6 h3 my-0"> {{ this.burger_name }} </div>
-            {{/each}}
-            {{#each burgersEaten}}
-
-                <div id="patty-{{ this.id}}" class="col-6 h3 my-0"> {{ this.burger_name }} </div>
+<div class="container wrapper container-fluid">
+    <div class="row d-flex ">
+        <div class="col-md-7">
+            <div class="container container-fluid">
+                <div id="row-bun-top" class="row ">
+                    <div id="oval" class="p-4 my-0"></div>
+                    <div class="col jumbotron h1 text-center burger-bun-top p-1 my-0">
+                        <p>It's Burger Time!</p>
+                    </div>
+                </div>
             </div>
-            {{/each}}
+            <main class="container">
+                <div id="tomato" class="row bg-danger mx-3 text-white rounded align-items-center d-flex d-inline-block">
+                    <div id="tomato-add" class="col-4 my-auto text-right">
+                        <button type="button" class="btn btn-sm btn-danger border mx-2 my-2 px-4">
+                            <h2><i class="fas fa-hamburger"></i></h2>
+                            <h5>Add</h5>
+                        </button>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" class="form-control w-75" id="txtBoxBurger" placeholder="Enter Burger Name Here">
+                    </div>
+                </div>
+                <div id="meat-heading" class="row bg-warning rounded mx-1">
+                    <div id="burgers-avail" class="col-12">
+                        <h2 class="text-center">Available To Eat</h2>
+                    </div>
+                    
+                </div>
+
+                <div class="row mx-3 meat border border-dark rounded text-white text-center">
+                    {{#each burgersAvail}}
+                        <div id="patty-{{ this.id}}" class="col-12 h3 my-0 border border-dark"> {{ this.burger_name }} </div>
+                    {{/each}}
+                    
+                </div>
+            </main>
+
+            <div class="container container-fluid mb-5">
+                <div id="row-bun-bot" class="row">
+                    <div class="col burger-bun-bot h1 my-0 px-0 rounded text-center burger-bun-bot d-flex align-items-center justify-content-center">
+                        <img id="bb-stitch" class="img-fluid" src="/assets/images/bb-stitch.png" alt="Bob burger fam">
+                    </div>
+                </div>
+            </div>
         </div>
-
-
-</main>
-<footer class="container container-fluid mb-5">
-    <div id="row-footer" class="row">
-        <div
-            class="col h1 my-0 px-0 rounded text-center burger-bun-bot d-flex align-items-center justify-content-center">
-            <img id="bb-stitch" class="img-fluid" src="/assets/images/bb-stitch.png" alt="Bob burger fam">
+        <div id="burgers-devoured" class="col-md-5 d-flex align-items-center">
+                <div class="row row-eaten">
+                    <div id="burgers-devoured-main" class="col-12 bg-secondary text-white">
+                        <h3 class="text-center">Wrappers to Hide From Spouse</h3>
+                    </div>
+                    {{#each burgersEaten}}
+                        <div id="patty-{{ this.id}}" class="col-12 h5 my-2 text-center"> {{ this.burger_name }} 
+                            <button class="delete-burger btn btn-sm ml-2" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Hide Evidence</button>
+                        </div>
+                    {{/each}}
+                </div>  
         </div>
     </div>
-</footer>
 </div>
