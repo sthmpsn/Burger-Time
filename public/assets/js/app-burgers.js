@@ -1,11 +1,13 @@
 // $(document).ready(function(){
 $(function(){
-
+    
     console.log("Loaded: app-burgers.js");
 
     // POST DATA
     $("#btn-add-burger").on("click", function(event){
         console.log("Button Add burger clicked");
+
+
         var newBurger = {
             burger_name: $("#txtBoxBurger").val().trim(),
             devoured: 0
@@ -22,6 +24,7 @@ $(function(){
                     location.reload();
                 }
             );
+
         }
         else{
             console.log("Plase enter a value for the burger name");
