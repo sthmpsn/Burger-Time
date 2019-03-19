@@ -12,7 +12,7 @@
             <main class="container">
                 <div id="tomato" class="row bg-danger mx-3 text-white rounded align-items-center d-flex d-inline-block">
                     <div id="tomato-add" class="col-4 my-auto text-right">
-                        <button type="button" class="btn btn-sm btn-danger border mx-2 my-2 px-4">
+                        <button type="button" id="btn-add-burger" class="btn btn-sm btn-danger border mx-2 my-2 px-4">
                             <h2><i class="fas fa-hamburger"></i></h2>
                             <h5>Add</h5>
                         </button>
@@ -21,7 +21,7 @@
                         <input type="text" class="form-control w-75" id="txtBoxBurger" placeholder="Enter Burger Name Here">
                     </div>
                 </div>
-                <div id="meat-heading" class="row bg-warning rounded mx-1">
+                <div id="meat-heading" class="row bg-warning rounded mx-1 ">
                     <div id="burgers-avail" class="col-12">
                         <h2 class="text-center">Available To Eat</h2>
                     </div>
@@ -30,7 +30,9 @@
 
                 <div class="row mx-3 meat border border-dark rounded text-white text-center">
                     {{#each burgersAvail}}
-                        <div id="patty-{{ this.id}}" class="col-12 h3 my-0 border border-dark"> {{ this.burger_name }} </div>
+                        <div id="patty-{{this.id}}" class="col-12 h3 my-0 border border-dark"> {{ this.burger_name }} 
+                            <button class="eat-burger btn btn-sm ml-2 mb-1" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Eat Burger</button>
+                        </div>
                     {{/each}}
                     
                 </div>
@@ -44,14 +46,16 @@
                 </div>
             </div>
         </div>
-        <div id="burgers-devoured" class="col-md-5 d-flex align-items-center">
+        <div id="burgers-devoured" class="col-md-5 mt-5">
                 <div class="row row-eaten">
                     <div id="burgers-devoured-main" class="col-12 bg-secondary text-white">
                         <h3 class="text-center">Wrappers to Hide From Spouse</h3>
                     </div>
                     {{#each burgersEaten}}
-                        <div id="patty-{{ this.id}}" class="col-12 h5 my-2 text-center"> {{ this.burger_name }} 
-                            <button class="delete-burger btn btn-sm ml-2" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Hide Evidence</button>
+                        <div id="patty-{{ this.id}}" class="col-12 h5 my-2 py-0 text-center"> 
+                            <button id="patty-{{this.id}}" class="delete-burger btn btn-sm ml-2" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Hide Evidence</button>
+                            {{ this.burger_name }} 
+                            <button id="patty-{{this.id}}" class="purchase-burger btn btn-sm ml-2" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Purchase Again</button>
                         </div>
                     {{/each}}
                 </div>  

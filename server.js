@@ -1,5 +1,4 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
 require('dotenv').config();
 
 // Set the port of our application
@@ -9,6 +8,9 @@ var PORT = process.env.PORT || 8000;
 // Create express app instance.
 var app = express();
 
+// Tell express that the "public" folder is where all the static page info is located
+app.use(express.static("public"));   
+
 // Sets up the Express app to handle data parsing (middleware evaluates all incoming requests)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -16,15 +18,19 @@ app.use(express.json());
 // ================================================================================
 // Express Handlebars Template config
 // ================================================================================
-app.engine("handlebars", exphbs({defaultLayout: "main" }));
+var exphbs = require('express-handlebars');
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" } ));
 app.set("view engine", "handlebars");
-app.use(express.static('public'));   //tell express that the "public" folder is where all the static page info is located
+
 
 // ================================================================================
 // ROUTER
 // ================================================================================
-var routes = require("./controllers/burgers_controller");
-app.use(routes);  //middleware that will intercept requests and route appropriately
+var routes = require("./controllers/burgersController");
+
+//middleware that will intercept requests and route appropriately
+app.use(routes);  
 
 
 // =============================================================================

@@ -30,4 +30,7 @@
     border-right: 5px solid #FFAD07;
 }
 
-
+#burgers-devoured {
+    overflow-y: auto;
+    max-height: 600px;
+}
