@@ -34,3 +34,8 @@
     overflow-y: auto;
     max-height: 600px;
 }
+
+.btn {
+    max-width: 83px;
+    white-space: normal;
+}

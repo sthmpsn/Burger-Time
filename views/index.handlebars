@@ -47,13 +47,13 @@
             </div>
         </div>
         <div id="burgers-devoured" class="col-md-5 mt-5">
-                <div class="row row-eaten">
+                <div class="row row-eaten bg-light">
                     <div id="burgers-devoured-main" class="col-12 bg-secondary text-white">
-                        <h3 class="text-center">Wrappers to Hide From Spouse</h3>
+                        <h3 class="text-center">Receipts to Hide From Spouse</h3>
                     </div>
                     {{#each burgersEaten}}
                         <div id="patty-{{ this.id}}" class="col-12 h5 my-2 py-0 text-center"> 
-                            <button id="patty-{{this.id}}" class="delete-burger btn btn-sm ml-2" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Hide Evidence</button>
+                            <button id="patty-{{this.id}}" class="delete-burger btn btn-sm ml-2" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Destroy Evidence</button>
                             {{ this.burger_name }} 
                             <button id="patty-{{this.id}}" class="purchase-burger btn btn-sm ml-2" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Purchase Again</button>
                         </div>
