@@ -3,11 +3,13 @@ body {
     background-size: cover;
 }
 
+/* Bob's Burger image */
 #bb-stitch {
     width: 30%;
     height: 70%;
 }
 
+/* Burger Top rounded */
 #oval {
     width: 100%;
     height: 100px;
