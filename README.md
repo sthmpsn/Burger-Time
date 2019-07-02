@@ -4,7 +4,7 @@ A fun web app that takes in the type of burger a user desires and transforms it 
 **Note:** Bun, patties, tomato, and cheese are made up of <div> elements
 
 ## Deployed Application:
-https://dashboard.heroku.com/apps/burgertime1
+https://burgertime1.herokuapp.com/
 
 ## Instructions
 *  Enter a name of a burger you'd like to add and click the "Add" button. This adds the burger to the "Available to Eat" section
